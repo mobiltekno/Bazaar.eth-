@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Bazaar.eth | Farcaster Marketplace</title>
+  
+  <!-- Farcaster v2 Meta -->
+  <meta name="fc:miniapp" content='{"version":"1","imageUrl":"https://bazaar-eth.netlify.app/preview.png","button":{"title":"🛍️ Open Bazaar","action":{"type":"launch_frame","name":"Bazaar.eth","url":"https://bazaar-eth.netlify.app","splashImageUrl":"https://bazaar-eth.netlify.app/icon.png","splashBackgroundColor":"#7C3AED"}}}' />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">Bazaar<span>.eth</span></div>
+      <div class="user-badge" id="trust-badge">
+        <span class="pulse"></span>
+        <span id="score-text">FID Score: --</span>
+      </div>
+    </header>
+
+    <!-- Hero / Stats -->
+    <section class="hero">
+      <h1>Social Commerce on <span>Base</span></h1>
+      <p>The most trusted marketplace in the Warpcast feed.</p>
+    </section>
+
+    <!-- Category Tabs -->
+    <nav class="categories">
+      <button class="active">All</button>
+      <button>Digital</button>
+      <button>Services</button>
+      <button>Collectibles</button>
+    </nav>
+
+    <!-- Product Grid -->
+    <main class="product-grid" id="product-list">
+      <!-- Skeleton loader while SDK initialized -->
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <button class="nav-item active">🏠<span>Explore</span></button>
+      <button class="nav-item">🛒<span>My Cart</span></button>
+      <button class="nav-item">📈<span>My Shop</span></button>
+    </nav>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
