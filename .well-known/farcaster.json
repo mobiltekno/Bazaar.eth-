@@ -1,0 +1,14 @@
+{
+  "version": "1",
+  "name": "Bazaar.eth",
+  "iconUrl": "https://bazaar-eth.netlify.app/icon.png",
+  "homeUrl": "https://bazaar-eth.netlify.app",
+  "imageUrl": "https://bazaar-eth.netlify.app/preview.png",
+  "buttonTitle": "🛍️ Open Bazaar",
+  "splashImageUrl": "https://bazaar-eth.netlify.app/icon.png",
+  "splashBackgroundColor": "#7C3AED",
+  "category": "utilities",
+  "description": "The first social-trust based marketplace for Farcaster.",
+  "tags": ["shopping", "web3", "marketplace", "social-graph", "base"],
+  "primaryCategory": "utilities"
+}
