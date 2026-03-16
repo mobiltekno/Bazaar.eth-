@@ -1,14 +1,20 @@
 {
-  "version": "1",
-  "name": "Bazaar.eth",
-  "iconUrl": "https://bazaar-eth.netlify.app/icon.png",
-  "homeUrl": "https://bazaar-eth.netlify.app",
-  "imageUrl": "https://bazaar-eth.netlify.app/preview.png",
-  "buttonTitle": "🛍️ Open Bazaar",
-  "splashImageUrl": "https://bazaar-eth.netlify.app/icon.png",
-  "splashBackgroundColor": "#7C3AED",
-  "category": "utilities",
-  "description": "The first social-trust based marketplace for Farcaster.",
-  "tags": ["shopping", "web3", "marketplace", "social-graph", "base"],
-  "primaryCategory": "utilities"
+  "frame": {
+    "name": "Bazaar.eth",
+    "version": "1",
+    "iconUrl": "https://bazaar-eth.netlify.app/icon.png",
+    "homeUrl": "https://bazaar-eth.netlify.app",
+    "imageUrl": "https://bazaar-eth.netlify.app/preview.png",
+    "splashImageUrl": "https://bazaar-eth.netlify.app/icon.png",
+    "splashBackgroundColor": "#7C3AED",
+    "webhookUrl": "https://bazaar-eth.netlify.app/api/webhook",
+    "subtitle": "Buy Knowing Who to Trust",
+    "description": "Buy Knowing Who to Trust",
+    "primaryCategory": "shopping"
+  },
+  "accountAssociation": {
+    "header": "eyJmaWQiOjI4MzcyNiwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweEY2NTYxOURDRUFGRUMyNjAyN0ExOGZCOUVEYjhjNkIwRDhmOEM2RTUifQ",
+    "payload": "eyJkb21haW4iOiJiYXphYXItZXRoLm5ldGxpZnkuYXBwIn0",
+    "signature": "15JVBdJxoOJopn8+qhj/dkFZNL2MBQbtL1ZTUmi8PR5ReGtsL7d8YtJJRN4q5D8uBaSEFfg9E1pKgvWH5xjByxs="
+  }
 }
