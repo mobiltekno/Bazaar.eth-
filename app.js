@@ -17,9 +17,12 @@ class BazaarApp {
         name: "Base Neon Hoodie",
         price: "0.02 ETH",
         value: "20000000000000000",
-        address: "0x1234567890123456789012345678901234567890", // Örnek Satıcı
+        address: "0x1234567890123456789012345678901234567890",
         seller: "base.eth",
         fid: 1,
+        neynar: 95,
+        sales: 42,
+        links: { warpcast: "base", x: "base" },
         image: "https://images.ctfassets.net/sygt3q11s4a9/5kbm9b5W1gYOdCZpkb8nAV/e4d87acb605b07c9fb8b8ce094e067b4/Base_Blog_header.png",
         trust: 99
       },
@@ -31,6 +34,9 @@ class BazaarApp {
         address: "0x9876543210987654321098765432109876543210",
         seller: "dwr.eth",
         fid: 3,
+        neynar: 99,
+        sales: 128,
+        links: { warpcast: "dwr", x: "dwr" },
         image: "https://storage.googleapis.com/papyrus_images/92fca84b479c314123bc945f095cd849c81c69890ee7f9bc2e77f5ce594ac244.png",
         trust: 98
       },
@@ -42,6 +48,9 @@ class BazaarApp {
         address: "0x5555555555555555555555555555555555555555",
         seller: "clanker.eth",
         fid: 121,
+        neynar: 88,
+        sales: 15,
+        links: { warpcast: "clanker" },
         image: "https://images.ctfassets.net/sygt3q11s4a9/5kbm9b5W1gYOdCZpkb8nAV/e4d87acb605b07c9fb8b8ce094e067b4/Base_Blog_header.png",
         trust: 95
       }
@@ -51,7 +60,7 @@ class BazaarApp {
   }
 
   async init() {
-    console.log("Bazaar.eth V2 Initializing...");
+    console.log("Bazaar.eth V2+ Initializing...");
     
     // 1. Data Loading (Mock + Persistence)
     this.favs = JSON.parse(localStorage.getItem('bazaar_favs') || '[]');
@@ -93,6 +102,7 @@ class BazaarApp {
     list.innerHTML = items.map(p => {
       const isFav = this.favs.includes(p.id);
       const isAlert = this.alerts.includes(p.id);
+      const links = p.links || {};
       return `
         <div class="product-card">
           <div class="product-img" style="background-image: url('${p.image}')">
@@ -103,11 +113,20 @@ class BazaarApp {
               <button class="action-btn" onclick="window.app.addToCompare(${p.id})">⚖️</button>
             </div>
           </div>
-          <div class="product-info" onclick="window.app.buyProduct(${p.id})">
-            <h3>${p.name}</h3>
-            <div class="seller-line">
-              <span class="seller">@${p.seller}</span>
-              <span class="trust-mini">${p.trust}%</span>
+          <div class="product-info">
+            <div onclick="window.app.buyProduct(${p.id})">
+              <h3>${p.name}</h3>
+              <div class="seller-line">
+                <span class="seller">@${p.seller}</span>
+                <span class="trust-mini">
+                  <span class="neynar-score">N:${p.neynar || 0}</span> | ${p.trust}%
+                </span>
+              </div>
+              <div class="sales-count">🛍️ ${p.sales || 0} Sales</div>
+            </div>
+            <div class="seller-socials">
+              ${links.warpcast ? `<a href="https://warpcast.com/${links.warpcast}" target="_blank" class="social-link">W</a>` : ''}
+              ${links.x ? `<a href="https://x.com/${links.x}" target="_blank" class="social-link">X</a>` : ''}
             </div>
           </div>
         </div>
