@@ -23,33 +23,83 @@
       </div>
     </header>
 
-    <!-- Hero / Stats -->
-    <section class="hero">
-      <h1>Social Commerce on <span>Base</span></h1>
-      <p>The most trusted marketplace in the Warpcast feed.</p>
-    </section>
+    <!-- Dynamic Views -->
+    <main id="main-content">
+      <!-- Explore View -->
+      <section id="view-explore" class="view active">
+        <section class="hero">
+          <h1>Social Commerce on <span>Base</span></h1>
+          <p>The most trusted marketplace in the Warpcast feed.</p>
+        </section>
+        <nav class="categories">
+          <button class="active">All</button>
+          <button>Digital</button>
+          <button>Services</button>
+        </nav>
+        <div class="product-grid" id="product-list"></div>
+      </section>
 
-    <!-- Category Tabs -->
-    <nav class="categories">
-      <button class="active">All</button>
-      <button>Digital</button>
-      <button>Services</button>
-      <button>Collectibles</button>
-    </nav>
+      <!-- Sell View -->
+      <section id="view-sell" class="view">
+        <div class="view-header">
+          <h2>Sell Product</h2>
+          <p>List your items on the social graph.</p>
+        </div>
+        <form id="sell-form" class="bazaar-form">
+          <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" id="in-name" placeholder="e.g. Ultra Rare NFT" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Price (ETH/DEGEN)</label>
+              <input type="text" id="in-price" placeholder="0.05" required>
+            </div>
+            <div class="form-group">
+              <label>Token</label>
+              <select id="in-token">
+                <option value="ETH">ETH</option>
+                <option value="DEGEN">DEGEN</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Image URL</label>
+            <input type="url" id="in-img" placeholder="https://..." required>
+          </div>
+          <button type="submit" class="submit-btn">🚀 LIST PRODUCT</button>
+        </form>
+      </section>
 
-    <!-- Product Grid -->
-    <main class="product-grid" id="product-list">
-      <!-- Skeleton loader while SDK initialized -->
-      <div class="skeleton-card"></div>
-      <div class="skeleton-card"></div>
-      <div class="skeleton-card"></div>
+      <!-- Favorites View -->
+      <section id="view-fav" class="view">
+        <div class="view-header">
+          <h2>My Favorites</h2>
+          <p>Items you've saved for later.</p>
+        </div>
+        <div class="product-grid" id="fav-list">
+          <p class="empty-state">No favorites yet.</p>
+        </div>
+      </section>
+
+      <!-- Compare View -->
+      <section id="view-compare" class="view">
+        <div class="view-header">
+          <h2>Compare</h2>
+          <p>Compare two items side-by-side.</p>
+        </div>
+        <div id="compare-container">
+          <p class="empty-state">Add items to compare.</p>
+        </div>
+      </section>
     </main>
 
     <!-- Bottom Navigation -->
     <nav class="bottom-nav">
-      <button class="nav-item active">🏠<span>Explore</span></button>
-      <button class="nav-item">🛒<span>My Cart</span></button>
-      <button class="nav-item">📈<span>My Shop</span></button>
+      <button class="nav-item active" onclick="window.app.switchView('explore')">🏠<span>Explore</span></button>
+      <button class="nav-item" onclick="window.app.switchView('sell')">➕<span>Sell</span></button>
+      <button class="nav-item" onclick="window.app.switchView('fav')">🏷️<span>Saved</span></button>
+      <button class="nav-item" onclick="window.app.switchView('compare')">⚖️<span>Compare</span></button>
     </nav>
   </div>
 
